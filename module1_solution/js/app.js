@@ -5,6 +5,7 @@
 		.controller('LunchCheckController', LunchCheckController);
 
 	LunchCheckController.$inject = ['$scope'];
+
 	function LunchCheckController($scope) {
 
 		$scope.showMessage = function () {
@@ -13,16 +14,19 @@
 
 			if (items == undefined || items == "") {
 				$scope.message = "Please enter data first";
+				$scope.in = false;
 			} else {
-				var list = items.split(",")
+				$scope.in = true;
+				var list = items.split(",");
 				if (list.length > 3) {
 					$scope.message = "Too much!";
 				} else {
 					$scope.message = "Enjoy!";
-				};
-			};
+				}
+			}
 
-			$scope.list = undefined
+			$scope.list = undefined;
 		};
 	}
+
 })();
