@@ -1,0 +1,20 @@
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Short Name</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in foundItems">
+        <td>{{ item.short_name }}</td>
+        <td>{{ item.name }} </td>
+        <td>{{ item.description }}</td>
+        <td><button class="btn btn-secondary" ng-click="onRemove({index: $index});">Don't Want This One!</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
