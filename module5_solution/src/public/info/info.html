@@ -1,0 +1,13 @@
+<div id="main-content" class="container" ng-controller="InfoController as $ctrl">
+  <div id="info" ng-if="$ctrl.completed">
+    Name: {{ $ctrl.user.firstName }} {{ $ctrl.user.lastName }}<br>
+    Email: {{ $ctrl.user.email}}<br>
+    Phone: {{ $ctrl.user.phone }}<br>
+    Favorite Dish: {{ $ctrl.user.dish.short_name }} - {{ $ctrl.user.dish.name }}<br>
+    Dish description: {{ $ctrl.user.dish.description }}<br>
+    <img width="250" height="150" ng-src="{{ $ctrl.basePath }}/images/{{ $ctrl.user.dish.short_name }}.jpg">
+  </div>
+  <div id="info" ng-if="!$ctrl.completed">
+    Not signed up yet. <a ui-sref="public.signup">Sign up now!</a>
+  </div>
+</div>
